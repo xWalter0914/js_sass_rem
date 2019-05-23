@@ -1,0 +1,99 @@
+@function px2rem($px){
+    $rem:37.5px;
+    @return ($px/$rem) + rem
+}
+html{
+    background-color: #f8f8f8;
+}
+*{
+    padding: 0;
+    margin:0;
+}
+.header{
+    overflow: hidden;
+    height: px2rem(40px);
+    width: calc(100% - px2rem(23px));
+    background-color: red;
+    padding-left: px2rem(23px);
+    .header-item{
+        float: left;
+        color:#ffcdce;
+        font-size: px2rem(16px);
+        list-style: none;
+        margin-right: px2rem(20px);
+        line-height: px2rem(40px);
+        &:nth-child(2){
+          color:#fff;
+          font-size:px2rem(17px)
+        }
+    }
+}
+.banner-content{
+    position: relative;
+    height: px2rem(190px);
+    .banner{
+        width: 100%;
+        height: px2rem(190px);
+    }
+    .banner-title{
+        position: absolute;
+        font-size: px2rem(16px);
+        color:#fff;
+        left:px2rem(15px);
+        bottom:px2rem(20px);
+    }
+}
+.news-content{
+    display: block;
+    .news-item{
+        width: calc(100% - px2rem(15+15px));
+        height: px2rem(90px);
+        padding-left:px2rem(15px);
+        padding-right:px2rem(15px);
+        .item-inner{
+            position: relative;
+            overflow: hidden;
+            padding-bottom: px2rem(10px);
+            border-bottom: 1px solid #e5e5e5;
+            .news-img{
+                float: left;
+                margin-top: px2rem(10px);
+                width:px2rem(95px);
+                height: px2rem(70px);
+                margin-right: px2rem(15px);
+            }
+            .news-title{
+                margin-top: px2rem(16px);
+                color:#404040;
+                font-size: px2rem(17px);
+                line-height: px2rem(20px);
+            }
+            .time{
+                position: absolute;
+                left:px2rem(110px);
+                bottom: px2rem(17px);
+                font-size: px2rem(12px);
+                color:#888;
+            }
+            .num{
+                font-size: px2rem(12px);
+                position: absolute;
+                color:#888;
+                bottom: px2rem(17px);
+                right:px2rem(4px);
+                &:before{
+                    content:'';
+                    display: inline-block;
+                    width: px2rem(15px);
+                    height: px2rem(14px);
+                    background-size: contain;
+                    background-image: url('./build/readed.jpg');
+                    position: absolute;
+                    top:px2rem(2px);
+                    left:px2rem(-24px);
+                } 
+
+            }
+        }
+    }
+}

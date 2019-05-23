@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5,user-scalabale=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 1rem=根元素HTML浏览器字体大小 默认16 -->
+    <style>
+        html{
+            font-size: 16px;
+        }
+        .box{
+            width:10rem;
+            height:10rem;
+            background-color: red;
+        }
+        .text{
+            color:#fff;
+            font-size:1rem;
+        }
+       /* @media screen and (max-width:360px) and (min-width:320px){/*大于321px 并且 小于360px
+            html{
+                font-size:20px;
+            }
+        }
+        */
+    </style>
+</head>
+<body>
+    <script>
+        //获取视窗宽度
+        let htmlWidth=document.documentElement.clientWidth ||
+            document.body.clientWidth;
+        console.log(htmlWidth);
+        //调整html fontsize
+        let htmlDom=document.getElementsByTagName('html')[0];
+        htmlDom.style.fontSize=(htmlWidth/10)+'px'
+    </script>
+    <div class="box">
+        <p class="text">hello,rem</p>
+    </div>
+</body>
+</html>
